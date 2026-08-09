@@ -329,8 +329,13 @@ if (pngBtn) {
 
       const linkFront = document.createElement("a");
 
-      linkFront.download = "Kartu-P3H-Depan.png";
+      const namaPeserta = document.getElementById("nama").value
+    .trim()
+    .replace(/[^a-zA-Z0-9\s]/g, "")
+    .replace(/\s+/g, "-");
 
+linkFront.download = namaPeserta + "-Depan.png";
+      
       linkFront.href =
         canvasFront.toDataURL("image/png");
 
@@ -368,9 +373,8 @@ if (pngBtn) {
 
       const linkBack = document.createElement("a");
 
-      linkBack.download =
-        "Kartu-P3H-Belakang.png";
-
+      linkBack.download = namaPeserta + "-Belakang.png";
+      
       linkBack.href =
         canvasBack.toDataURL("image/png");
 
