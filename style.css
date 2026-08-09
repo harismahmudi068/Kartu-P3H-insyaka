@@ -1,0 +1,541 @@
+:root {
+  --green: #0b4a36;
+  --gold: #c89a35;
+  --bg: #edf2ef;
+  --text: #17221d;
+  --muted: #718078;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  background: linear-gradient(120deg, #063c2c, #0d6549);
+  color: white;
+  padding: 18px 5%;
+}
+
+.topbar strong {
+  display: block;
+  font-size: 20px;
+}
+
+.topbar span {
+  font-size: 12px;
+  opacity: .85;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 22px;
+}
+
+.form-card,
+.preview {
+  background: white;
+  border: 1px solid #d8e2dc;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 55, 38, .08);
+}
+
+h1, h2 { margin-top: 0; }
+h1 { font-size: 22px; }
+h2 { font-size: 18px; margin-bottom: 3px; }
+
+.help {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  margin: 13px 0 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid #d1ddd7;
+  border-radius: 9px;
+  padding: 11px;
+  font: inherit;
+  font-size: 14px;
+  background: #fbfdfc;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #b7d8cb;
+  border-color: #26765b;
+}
+
+.buttons {
+  display: grid;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary {
+  color: white;
+  background: linear-gradient(135deg, #0a573f, #16805d);
+}
+
+button:not(.primary) {
+  color: #14553f;
+  background: #eaf3ef;
+}
+
+.preview-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-title p {
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.status {
+  background: #e4f5ec;
+  color: #16744e;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.card-stage {
+  display: grid;
+  gap: 22px;
+  margin-top: 15px;
+}
+
+.id-card {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  aspect-ratio: 1536 / 972;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 50, 35, .18);
+  background: white;
+}
+
+.template {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-photo {
+  display: none;
+  position: absolute;
+  left: 3.6%;
+  top: 27.7%;
+  width: 26.5%;
+  height: 57%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.field {
+  position: absolute;
+  font-size: clamp(8px, 1.55vw, 14px);
+  line-height: 1.2;
+  color: #101010;
+}
+
+.name {
+  left: 53.5%;
+  top: 29%;
+  width: 60%;
+  font-weight: bold;
+}
+
+.registration,
+.whatsapp,
+.institution,
+.area {
+  left: 53.5%;
+  width: 43%;
+}
+
+.registration {
+  top: 36.3%;
+  font-size: 6.5px;
+}
+
+.whatsapp {
+  top: 42.5%;
+  font-size: 6.5px;
+  letter-spacing: 0.5px;
+}
+
+.institution {
+  top: 35%;
+  line-height: 1.28;
+}
+
+.area {
+  top: 58.8%;
+  font-size: 6.5px;
+}
+
+.date {
+  left: 4%;
+  top: 90%;
+  width: 25%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.qr {
+  position: absolute;
+  right: 5%;
+  top: 68%;
+  width: 15%;
+  height: 25%;
+  background: white;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.qr img,
+.qr canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.qr-caption {
+  position: absolute;
+  right: 4.7%;
+  top: 60%;
+  width: 15.5%;
+  text-align: center;
+  font-size: clamp(6px, .7vw, 9px);
+  font-weight: bold;
+  color: #123b2e;
+}
+
+.topbar h1 {
+  margin-bottom: 0;
+}
+
+.topbar p {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .id-card {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .id-card {
+    max-width: 500px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .topbar,
+  .form-card,
+  .preview-title {
+    display: none !important;
+  }
+
+  .container {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .preview {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .id-card {
+    width: 85.6mm !important;
+    height: 54mm !important;
+    max-width: 85.6mm !important;
+    max-height: 54mm !important;
+    box-sizing: border-box;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0;
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  .id-card:last-child {
+    page-break-after: auto;
+  }
+}
+#pngBtn.download-active {
+  background: #0b8f5a !important;
+  color: white !important;
+  transform: scale(0.97);
+  box-shadow: 0 0 0 3px rgba(11, 143, 90, 0.2);
+  transition: all 0.15s ease;
+}
+/* TOMBOL DOWNLOAD PNG PROFESIONAL */
+
+#pngBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 230px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #006b3c, #0b8f5a);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 107, 60, 0.25);
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+
+/* IKON DOWNLOAD */
+#pngBtn::before {
+  content: "⬇";
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* HOVER */
+#pngBtn:hover {
+  background: linear-gradient(135deg, #075c37, #0aa66a);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(0, 107, 60, 0.32);
+}
+
+/* SAAT DITEKAN */
+#pngBtn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* SAAT PROSES DOWNLOAD */
+#pngBtn.download-active {
+  background: linear-gradient(135deg, #087f50, #12a96f) !important;
+  transform: scale(0.98);
+  box-shadow: 0 0 0 4px rgba(11, 143, 90, 0.15);
+}
+
+/* ANIMASI IKON */
+#pngBtn.download-active::before {
+  content: "⟳";
+  animation: downloadSpin 0.8s linear infinite;
+}
+
+@keyframes downloadSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* =========================================
+   FINISHING AREA TOMBOL
+   ========================================= */
+
+#updateBtn,
+#pngBtn {
+  min-height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* TOMBOL PERBARUI KARTU */
+#updateBtn {
+  padding: 10px 20px;
+  border: none;
+  background: #006b3c;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 107, 60, 0.18);
+}
+
+#updateBtn:hover {
+  background: #075c37;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 107, 60, 0.25);
+}
+
+#updateBtn:active {
+  transform: scale(0.98);
+}
+
+/* TOMBOL DOWNLOAD */
+#pngBtn {
+  padding: 10px 20px;
+}
+
+/* JARAK ANTAR TOMBOL */
+#updateBtn + #pngBtn {
+  margin-left: 8px;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 600px) {
+
+  #updateBtn,
+  #pngBtn {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 8px;
+  }
+
+}
+/* =========================================
+   FINISHING HEADER & FORM
+   ========================================= */
+
+.topbar {
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #006b3c, #0b8f5a);
+  color: white;
+  box-shadow: 0 6px 18px rgba(0, 107, 60, 0.18);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.topbar p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+
+/* =========================================
+   FORM CARD
+   ========================================= */
+
+.form-card {
+  border-radius: 14px;
+  border: 1px solid rgba(0, 107, 60, 0.10);
+  box-shadow: 0 8px 24px rgba(0, 50, 35, 0.10);
+}
+
+.form-card label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #174b38;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  border: 1px solid #d5dfda;
+  border-radius: 9px;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus {
+  outline: none;
+  border-color: #0b8f5a;
+  box-shadow: 0 0 0 3px rgba(11, 143, 90, 0.12);
+}
+
+
+/* =========================================
+   JUDUL PREVIEW
+   ========================================= */
+
+.preview-title {
+  color: #174b38;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   RESPONSIVE HP
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .topbar h1 {
+    font-size: 20px;
+  }
+
+  .topbar p {
+    font-size: 12px;
+  }
+
+  .form-card {
+    border-radius: 12px;
+  }
+
+}
