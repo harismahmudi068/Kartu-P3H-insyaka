@@ -25,7 +25,10 @@ body {
   display: block;
   font-size: 20px;
 }
-
+.topbar h1 {
+    position: relative;
+    top: 15px;
+}
 .topbar span {
   font-size: 12px;
   opacity: .85;
