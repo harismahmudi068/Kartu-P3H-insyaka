@@ -194,12 +194,12 @@ button:not(.primary) {
 }
 
 .registration {
-  top: 36.3%;
+  top: 35.8%;
   font-size: 6.5px;
 }
 
 .whatsapp {
-  top: 42.5%;
+  top: 42%;
   font-size: 6.5px;
   letter-spacing: 0.5px;
 }
@@ -210,7 +210,7 @@ button:not(.primary) {
 }
 
 .area {
-  top: 58.8%;
+  top: 58.3%;
   font-size: 6.5px;
 }
 
