@@ -25,13 +25,12 @@ body {
   display: block;
   font-size: 20px;
 }
-}
 .topbar span {
   font-size: 12px;
   opacity: .85;
 }
 .topbar h1 {
-    margin-top: 20px;
+    margin-top: 24px;
 }
 .container {
   max-width: 1250px;
