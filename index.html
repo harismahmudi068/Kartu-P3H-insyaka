@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b4a36">
+  <title>Generator Kartu P3H - HC INSYAKA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+<p>Pembuatan Kartu Pendamping P3H</p>
+     <h1>LP3H HC INSYAKA</h1>
+<p>(Institut KH Yazid Karimullah)</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="form-card">
+      <h1>Buat Kartu P3H</h1>
+      <p class="help">Isi data, unggah foto, lalu kartu akan tampil otomatis sesuai template.</p>
+
+<label>Foto
+  <input id="photo" type="file" accept="image/*">
+</label>
+
+<div class="photo-hint">
+  <strong>Atur Foto</strong>
+  <small>Geser foto dengan jari atau cubit untuk zoom</small>
+</div>
+
+      <label>Nama Lengkap
+        <input id="name" type="text" placeholder="Nama lengkap">
+      </label>
+
+      <label>Nomor Registrasi P3H
+        <input id="registration" type="text" placeholder="P3H-0001">
+      </label>
+
+      <label>Nomor WhatsApp
+        <input id="whatsapp" type="tel" placeholder="0800-0000-0000-00">
+      </label>
+
+      <label>Wilayah Tugas
+        <input id="area" type="text" placeholder="Kabupaten/Kecamatan/Wilayah">
+      </label>
+
+      <label>Berlaku Sejak
+        <input id="validFrom" type="date">
+      </label>
+
+      <label>Pesan WhatsApp <small>(opsional)</small>
+        <textarea id="waMessage" placeholder="Halo, saya ingin menghubungi Anda..."></textarea>
+      </label>
+
+      <div class="buttons">
+        <button id="updateBtn" class="primary">Perbarui Kartu</button>
+        <button id="pngBtn">Download PNG Depan + Belakang</button>
+      </div>
+
+      <p class="help">
+        QR Code dibuat dari nomor WhatsApp. Nomor 08..., 8..., atau 62... bisa digunakan.
+      </p>
+    </section>
+
+    <section class="preview">
+      <div class="preview-title">
+        <div>
+          <h2>Preview Kartu</h2>
+          <p>Depan dan belakang</p>
+        </div>
+        <span class="status">LIVE</span>
+      </div>
+
+        <div class="id-card front-card">
+          <img class="template" src="assets/front-template.jpg" alt="Template depan">
+          <div class="photo-frame">
+  <img id="photoPreview" class="person-photo" alt="Foto pemegang kartu">
+          </div>
+          <div id="outName" class="field name"></div>
+          <div id="outRegistration" class="field registration"></div>
+          <div id="outWhatsapp" class="field whatsapp"></div>
+          <div id="outInstitution" class="field institution"></div>
+          <div id="outArea" class="field area"></div>
+          <div id="outDate" class="field date"></div>
+          <div id="qrCode" class="qr"></div>
+<div class="qr-caption">SCAN<br>WHATSAPP</div>
+
+        </div>
+
+        <div class="id-card back-card">
+  <img class="template" src="assets/back-template.jpg" alt="Template belakang">
+
+  <div id="outIdP3H" class="id-p3h">
+    ID-P3H-
+  </div>
+</div>
+    </section>
+  </main>
+
+  <!-- QR library. Internet is needed for this library when previewing in Acode. -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
