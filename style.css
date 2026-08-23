@@ -179,7 +179,7 @@ button:not(.primary) {
 }
 
 .name {
-  left: 53.5%;
+  left: 54.5%;
   top: 29%;
   width: 60%;
   font-weight: bold;
@@ -189,12 +189,13 @@ button:not(.primary) {
 .whatsapp,
 .institution,
 .area {
-  left: 53.5%;
+  left: 54.5%;
   width: 43%;
 }
 
 .registration {
   top: 35.7%;
+  left: 54.5%;
   font-size: 6.5px;
 }
 
@@ -211,6 +212,7 @@ button:not(.primary) {
 
 .area {
   top: 58.2%;
+  left: 54.5%;
   font-size: 6.5px;
 }
 
