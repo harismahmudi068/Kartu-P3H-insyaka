@@ -1,0 +1,867 @@
+/* =========================================================
+   GENERATOR KARTU P3H
+   STYLE.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   WARNA DASAR
+   ========================================================= */
+
+:root {
+  --green: #0b4a36;
+  --gold: #c89a35;
+  --bg: #edf2ef;
+  --text: #17221d;
+  --muted: #718078;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.topbar {
+  padding: 18px 20px;
+  margin-bottom: 18px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #006b3c,
+      #0b8f5a
+    );
+
+  color: white;
+
+  box-shadow:
+    0 6px 18px
+    rgba(0, 107, 60, 0.18);
+}
+
+.topbar p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   LAYOUT UTAMA
+   ========================================================= */
+
+.container {
+  max-width: 1250px;
+  margin: 24px auto;
+  padding: 0 16px;
+
+  display: grid;
+
+  grid-template-columns:
+    360px
+    minmax(0, 1fr);
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   FORM & PREVIEW CARD
+   ========================================================= */
+
+.form-card,
+.preview {
+  background: white;
+
+  border: 1px solid #d8e2dc;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 55, 38, 0.08);
+}
+
+
+/* =========================================================
+   JUDUL
+   ========================================================= */
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   TEKS BANTUAN
+   ========================================================= */
+
+.help {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM LABEL
+   ========================================================= */
+
+label {
+  display: block;
+  margin: 13px 0 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #174b38;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+input,
+textarea {
+  width: 100%;
+
+  border: 1px solid #d5dfda;
+
+  border-radius: 9px;
+
+  padding: 11px;
+
+  font: inherit;
+  font-size: 14px;
+
+  background: #fbfdfc;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+
+  border-color: #0b8f5a;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(11, 143, 90, 0.12);
+}
+
+
+/* =========================================================
+   FOTO HINT
+   ========================================================= */
+
+.photo-hint {
+  margin-top: 10px;
+
+  padding: 10px 12px;
+
+  background: #f0f7f3;
+
+  border: 1px solid #d5e6dd;
+
+  border-radius: 10px;
+
+  color: #174b38;
+}
+
+.photo-hint strong {
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 3px;
+}
+
+.photo-hint small {
+  display: block;
+
+  font-size: 10px;
+
+  color: #718078;
+}
+
+
+/* =========================================================
+   TOMBOL
+   ========================================================= */
+
+.buttons {
+  display: grid;
+
+  gap: 8px;
+
+  margin-top: 17px;
+}
+
+button {
+  min-height: 44px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  padding: 10px 20px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* =========================================================
+   TOMBOL UPDATE
+   ========================================================= */
+
+#updateBtn {
+  background: #006b3c;
+
+  color: white;
+
+  box-shadow:
+    0 4px 12px
+    rgba(0, 107, 60, 0.18);
+}
+
+#updateBtn:hover {
+  background: #075c37;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 16px
+    rgba(0, 107, 60, 0.25);
+}
+
+#updateBtn:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   TOMBOL PNG & PDF
+   ========================================================= */
+
+#pngBtn,
+#pdfBtn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #006b3c,
+      #0b8f5a
+    );
+
+  color: white;
+
+  box-shadow:
+    0 6px 15px
+    rgba(0, 107, 60, 0.25);
+}
+
+
+/* IKON PNG */
+
+#pngBtn::before {
+  content: "⬇";
+
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+
+/* IKON PDF */
+
+#pdfBtn::before {
+  content: "📄";
+
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+
+/* HOVER */
+
+#pngBtn:hover,
+#pdfBtn:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #075c37,
+      #0aa66a
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px
+    rgba(0, 107, 60, 0.32);
+}
+
+
+/* ACTIVE */
+
+#pngBtn:active,
+#pdfBtn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+
+/* =========================================================
+   STATUS DOWNLOAD
+   ========================================================= */
+
+#pngBtn.download-active,
+#pdfBtn.download-active {
+  background:
+    linear-gradient(
+      135deg,
+      #087f50,
+      #12a96f
+    ) !important;
+
+  transform: scale(0.98);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(11, 143, 90, 0.15);
+}
+
+
+/* PNG LOADING */
+
+#pngBtn.download-active::before {
+  content: "⟳";
+
+  animation:
+    downloadSpin
+    0.8s linear infinite;
+}
+
+
+/* PDF LOADING */
+
+#pdfBtn.download-active::before {
+  content: "⟳";
+
+  animation:
+    downloadSpin
+    0.8s linear infinite;
+}
+
+
+@keyframes downloadSpin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   PREVIEW TITLE
+   ========================================================= */
+
+.preview-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #174b38;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+}
+
+.preview-title p {
+  margin-top: 0;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.status {
+  background: #e4f5ec;
+
+  color: #16744e;
+
+  border-radius: 20px;
+
+  padding: 6px 10px;
+
+  font-size: 10px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   WRAPPER & KARTU (UKURAN TETAP 856 x 540)
+   ========================================================= */
+
+.card-wrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 85.6 / 53.98;
+  margin: 15px auto 22px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 50, 35, 0.18);
+  overflow: hidden;
+  background: white;
+}
+
+.id-card {
+  width: 856px !important;
+  height: 540px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  transform-origin: top left;
+}
+
+
+/* =========================================================
+   TEMPLATE KARTU
+   ========================================================= */
+
+.template {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.photo-frame {
+  position: absolute;
+
+  left: 28px;
+  top: 150px;
+
+  width: 235px;
+  height: 310px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  border: 2px solid white;
+
+  background: #eeeeee;
+
+  z-index: 10;
+}
+
+
+.photo-frame .person-photo {
+  display: none;
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  border: none;
+
+  border-radius: 0;
+
+  transform-origin: center center;
+
+  user-select: none;
+
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+
+  touch-action: none;
+
+  cursor: grab;
+}
+
+
+.photo-frame .person-photo:active {
+  cursor: grabbing;
+}
+
+
+/* =========================================================
+   SEMUA TEKS KARTU
+   ========================================================= */
+
+.field {
+  position: absolute;
+
+  color: #101010;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   NAMA
+   ========================================================= */
+
+.name {
+  left: 462px;
+  top: 159px;
+
+  width: 360px;
+
+  font-size: 26px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   FIELD KANAN
+   ========================================================= */
+
+.registration,
+.whatsapp,
+.institution,
+.area {
+  left: 462px;
+
+  width: 360px;
+}
+
+
+/* =========================================================
+   NO REG
+   ========================================================= */
+
+.registration {
+  left: 462px;
+  top: 194px;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   NO WHATSAPP
+   ========================================================= */
+
+.whatsapp {
+  left: 462px;
+  top: 228px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   INSTITUTION
+   ========================================================= */
+
+.institution {
+  top: 161px;
+
+  line-height: 1.28;
+}
+
+
+/* =========================================================
+   WILAYAH
+   ========================================================= */
+
+.area {
+  left: 462px;
+  top: 315px;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   TANGGAL
+   ========================================================= */
+
+.date {
+  left: 38px;
+  top: 488px;
+
+  width: 214px;
+
+  text-align: center;
+
+  color: white;
+
+  font-weight: bold;
+
+  font-size: 22px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   QR
+   ========================================================= */
+
+.qr {
+  position: absolute;
+
+  right: 43px;
+  top: 367px;
+
+  width: 128px;
+  height: 128px;
+
+  background: white;
+
+  padding: 4px;
+
+  border-radius: 6px;
+
+  z-index: 10;
+}
+
+.qr img,
+.qr canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* =========================================================
+   QR CAPTION
+   ========================================================= */
+
+.qr-caption {
+  position: absolute;
+
+  right: 40px;
+  top: 323px;
+
+  width: 132px;
+
+  text-align: center;
+
+  font-size: 19px;
+
+  font-weight: bold;
+
+  color: #123b2e;
+
+  z-index: 11;
+}
+
+
+/* =========================================================
+   ID P3H BELAKANG
+   ========================================================= */
+
+.id-p3h {
+  position: absolute;
+
+  left: 44px;
+  top: 30px;
+
+  width: auto;
+
+  text-align: left;
+
+  font-size: 26px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  color: #174b38;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 15px;
+
+    border-radius: 12px;
+  }
+
+  .topbar h1 {
+    font-size: 20px;
+  }
+
+  .topbar p {
+    font-size: 12px;
+  }
+
+  .form-card {
+    border-radius: 12px;
+  }
+
+  #updateBtn,
+  #pngBtn,
+  #pdfBtn {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  .topbar,
+  .form-card,
+  .preview-title {
+    display: none !important;
+  }
+
+  .container {
+    display: block;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+  .preview {
+    padding: 0;
+
+    border: 0;
+
+    box-shadow: none;
+
+    margin: 0;
+  }
+
+  .card-wrapper {
+    width: 85.60mm !important;
+    height: 53.98mm !important;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0;
+    page-break-after: always;
+  }
+
+  .id-card {
+    transform: scale(1) !important;
+    width: 85.60mm !important;
+    height: 53.98mm !important;
+  }
+
+}
